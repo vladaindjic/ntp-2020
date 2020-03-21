@@ -3,14 +3,20 @@
 ## Kada je pravo vreme za optimizaciju
 - Sekvencijalne verzija koda je napisana
 - Nismo zadovoljni performansama 
-(program drugo traje, previše memorijskih resursa koristi, 
-nedovoljno koristi procesorska jezgra)
-- Profajliranjem utvrdimo koji delovi koda nisu optimalni
-- Koliko se često program koristi?
-- Koliki je procenat neoptimalnog koda?
-- Koliko je vremena neophodno za optimizaciju?
-- Kolike su koristi od optimizacije?
-- Voditi računa da je "prerana optimizacija izvkorenor svakog zla"
+  (program drugo traje, previše memorijskih resursa koristi, nedovoljno koristi procesorska jezgra) 
+- Profajliranjem utvrdimo koji delovi koda nisu optimalni 
+- Dali smo odgovore na sledeća pitanja:
+    - Koliko se često program koristi? 
+        - Dovoljno često da ga ima smisla optimizovati. 
+          Programi koji se pokreću retko, a pri tome traju i kratko, nema preterano smisla
+          optimizovati.
+    - Koliki je procenat neoptimalnog koda? 
+        - Ukoliko je procenat neoptimalnog koda mali, onda optimizacija neće mnogo doprineti.
+    - Koliko je vremena neophodno za optimizaciju? Kolike su koristi od optimizacije?
+        - Ukoliko treba previše vremena i ljudksih resursa
+          utrošiti na optimizaciju, a pri tome neće biti neke velike dobiti, 
+          onda možda treba odustati od optimizacije.
+- Voditi računa da je "prerana optimizacija izvor (koren) svakog zla"
  ([Donald Knuth](http://wiki.c2.com/?PrematureOptimization))
  
 
