@@ -30,16 +30,16 @@
 ![](img/konkurentnoVSparalelno.png)
 
 
-## Konkurentno i paralelno programiranje u Python-u
+## Konkurentno i paralelno programiranje u *Python*-u
 - Konkurentno programiranje je moguće upotrebom dve biblioteke: 
 [*threading*](https://docs.python.org/3/library/threading.html) i [*asyncio*](https://docs.python.org/3/library/asyncio.html)
 - Paralelno programiranje je moguće upotrebom biblioteke: [*multiprocessing*](https://docs.python.org/3.4/library/multiprocessing.html?highlight=process)
 - Pre nego što krenemo sa pregledom prethodno pomenutih biblioteka, potrebno je objasniti
-kada je koju biblioteku dobro koristiti, a kada ne. To će biti urađeno kroz par praktičnih primera.
+kada je koju biblioteku dobro koristiti, a kada ne. To će biti urađeno kroz nekoliko praktičnih primera.
 
 
-## I/O Bound programi
-- I/O Bound programi najviše vreme provedu blokirani I/O operacijama (mreža, disk, itd.)
+## *I/O Bound* programi
+- *I/O Bound* programi najviše vreme provedu blokirani I/O operacijama (mreža, disk, itd.)
 - Mogu se ubrzati preplitanjem vremena čekanja
 ![](img/IOBound.png)
 
@@ -81,10 +81,9 @@ if __name__ == "__main__":
 
 ### Skidanje sadržaja sa interneta upotrebom *threading* biblioteke
 - *Pre-emptive multitasking* - operativni sistem određuje kada će doći do zamene zadataka
-- Zahvaljujući GIL-u (Global Interpreter Lock) samo jedna nit može da izvršava 
-Python interpreter
+- Zahvaljujući GIL-u (*Global Interpreter Lock*) samo jedna nit može da izvršava kod
 - Nit može biti u bilo kom trenutka prekinuta i zamenjena drugom (čak i usred naredbe), 
-što dovodi do štetnog preplitanja.
+što može dovesti do štetnog preplitanja.
 - Voditi računa da ne dođe do trke do podataka ili *deadlock*-a
 
 ```python
@@ -187,7 +186,7 @@ if __name__ == "__main__":
 - Radi brže i skalira bolje od *threading*-a, jer nema *overhead*-a u zameni konteksta niti
 - Sve se izvršava u jednoj niti na jednom CPU
 - Sve biblioteke koje se koriste moraju imati podršku za komunikaciju sa *event loop*-om.
-- Svi zadaci moraju biti kooperativni, inače će jedan zadatak izgladneti ostale (time.sleep VS asyncio.sleep).
+- Svi zadaci moraju biti kooperativni, inače će jedan zadatak izgladneti ostale (*time.sleep* VS *asyncio.sleep*).
 
 
 ### Skidanje sadržaja sa interneta upotrebom *multiprocessing* biblioteke 
@@ -238,7 +237,7 @@ if __name__ == "__main__":
 - Slabije skalira od *threading*-a i *asyncio*-a zbog *overhead*-a koji nastaje pri kreiranju
 procesa. 
 
-## CPU Bound programi
+## *CPU Bound* programi
 - CPU Bound programi najviše vremena provedu računajući.
 - CPU je prezauzet i obično ga nema dovoljno
 - Ovakvi programi se mogu ubrzati povećanjem procesorske moći i njenim pravilnim iskorišćavanjem.
@@ -316,9 +315,9 @@ jako i slabo skaliranje, a zatim empirijski utvrditi najbolju konfiguraciju
 - Zbog ogreničenja GIL-a, nema smisla koristiti *threading*.
 
 ## Preporuka
-- Za optimizaciju CPU Bound programa koristiti *multiprocessing* ili C/C++.
-- Za optimizaciju I/O Bound programa Python community preporučuje: 
-"Use asyncio when you can, threading when you must." 
+- Za optimizaciju *CPU Bound* programa koristiti *multiprocessing* ili *C/C++*.
+- Za optimizaciju *I/O Bound* programa *Python community* preporučuje:
+*"Use asyncio when you can, threading when you must."*
 
 ## Literatura
 - https://realpython.com/python-concurrency/

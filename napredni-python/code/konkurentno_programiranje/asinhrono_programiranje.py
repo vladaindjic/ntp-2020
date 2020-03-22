@@ -59,7 +59,7 @@ def jos_malo_generatora():
     - Konkurentno programiranje - pisanje koda tako da se delovi nezavisno izvrsavaju, cak i ako ih samo jedna
       nit izvrsava.
     - Konkurentnost ne podrazumeva paralelizam.
-    - Konkurentnost - kompozicija nezavisnih nezavisnih izvrsnih jedinica
+    - Konkurentnost - kompozicija nezavisnih izvrsnih jedinica
       (vise nezavisnih delova koda unutar jedne niti, vise niti, vise procesa)
 
     - Paralelizam - simultano izvrsavanje racunjanja (engl. computation), tj. izvrsnih jedinica
