@@ -238,7 +238,7 @@ if __name__ == "__main__":
 procesa. 
 
 ## *CPU Bound* programi
-- CPU Bound programi najviše vremena provedu računajući.
+- *CPU Bound* programi najviše vremena provedu računajući.
 - CPU je prezauzet i obično ga nema dovoljno
 - Ovakvi programi se mogu ubrzati povećanjem procesorske moći i njenim pravilnim iskorišćavanjem.
 ![](img/CPUBound.png)
