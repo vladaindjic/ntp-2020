@@ -22,16 +22,10 @@ def partial_primer():
 
 
 # 3.2 reduce - redukcija nad kolekcijom
-def prirodni_brojevi(n):
-    if n <= 0:
-        return 1
-    for i in range(1, n + 1):
-        yield i
-
 
 # racunanje faktorijela upotrebom redukcije
 def faktoriel(n):
-    return reduce(mul, range(1, n+1), 1)
+    return reduce(mul, range(1, n + 1), 1)
 
 
 def reduce_primer():
