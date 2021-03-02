@@ -42,24 +42,28 @@ def pozdrav_vreme_dekorisanje(func):
     # Sta ako dekorisemo funkcije sa razlicitim brojem parametara
     def wrapper(*args, **kwargs):
         print("Pocinje wrapper funkcije")
-        poz_ret = func(*args, **kwargs)
+        ret = func(*args, **kwargs)
         print("Zavrsava se wrapper funkcija")
-        return "%s, vreme dekorisanja funkcije: %s" % (poz_ret, vreme)
+        return "%s, vreme dekorisanja funkcije: %s, vreme poziva dekorisane funkcije: %s" \
+               % (ret, vreme, datetime.datetime.now())
 
     # funkcija se moze vratiti kao parametar
     return wrapper
 
 
 def dekoratori_rucno():
+    print(">>> Rucno simuliranje dekorator ponasanja")
     print(datetime.datetime.now())
     # mora se funkcija rucno dekorisati
     poz_dobro_jutro_func = pozdrav_vreme_dekorisanje(dobro_jutro)
     poz_dobar_dan_func = pozdrav_vreme_dekorisanje(dobar_dan)
     poz_dobro_vece_func = pozdrav_vreme_dekorisanje(dobro_vece)
-    time.sleep(10)
+    time.sleep(3)
     print(datetime.datetime.now())
     print(poz_dobro_jutro_func("Mika"))
+    time.sleep(1)
     print(poz_dobar_dan_func("Zika"))
+    time.sleep(1)
     print(poz_dobro_vece_func("Pera"))
 
 
@@ -96,6 +100,8 @@ def dobro_vece_dekorisano(ime):
 
 
 def dekoratori():
+    # dekorisanje se radi prilikom prevodjenja
+    print(">>> Upotreba dekoratora uz oslonac na Python interpreter.")
     print(dobro_jutro_dekorisano("Mika"))
     time.sleep(1)
     print(dobar_dan_dekorisano("Zika"))
@@ -129,6 +135,7 @@ def dobro_vece_stekovano(ime):
 
 
 def dekoratori_stekovano():
+    # dekoratori mogu da se stekuju
     print(dobro_jutro_stekovano("Mika"))
     time.sleep(1)
     print(dobar_dan_stekovano("Zika"))
@@ -154,8 +161,8 @@ def dekorator_metode():
 
 
 if __name__ == '__main__':
-    funkcije_kao_first_class_objekti()
-    dekoratori_rucno()
-    dekoratori()
-    dekoratori_stekovano()
+    # funkcije_kao_first_class_objekti()
+    # dekoratori_rucno()
+    # dekoratori()
+    # dekoratori_stekovano()
     dekorator_metode()
