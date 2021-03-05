@@ -46,8 +46,9 @@ def primer3():
     print(type(c))
 
 
-# vise informacija o metaklasama moze se pronaci na
-# https://blog.ionelmc.ro/2015/02/09/understanding-python-metaclasses/
+# vise informacija o metaklasama moze se pronaci na:
+# 1. https://realpython.com/python-metaclasses/
+# 2. https://blog.ionelmc.ro/2015/02/09/understanding-python-metaclasses/
 
 if __name__ == '__main__':
     primer1()

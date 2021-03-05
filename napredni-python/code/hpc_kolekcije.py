@@ -116,8 +116,8 @@ def deque_primer():
 
 
 if __name__ == '__main__':
-    # ordered_dict_primer()
-    # namedtuple_primer()
-    # counter_primer()
-    # defaultdict_primer()
+    ordered_dict_primer()
+    namedtuple_primer()
+    counter_primer()
+    defaultdict_primer()
     deque_primer()
