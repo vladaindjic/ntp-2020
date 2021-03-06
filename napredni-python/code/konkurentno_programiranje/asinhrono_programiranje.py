@@ -200,4 +200,6 @@ if __name__ == '__main__':
     - Future predstavlja eventualni rezultat asinhrone operacije. U pitanju su
       awaitable objekti. Za vise informacija procitati:
       https://docs.python.org/3/library/asyncio-future.html#asyncio.Future
+    - Task sluzi da obgrli korutinu kako bi bila rasporedjena za konkurentno izvrsavanje
+      (Vise informacija na: https://docs.python.org/3/library/asyncio-task.html).
 """
