@@ -197,4 +197,7 @@ if __name__ == '__main__':
     - async/await je API za asinhrono programiranje, ali nas ne vezuje za specifican event-loop
       (npr. na nizem nivou, asyncio i curio rade drugacije, a koriste isti API)
     - async/await je fleksibilan mehanizam i to je ono sto Python zagovara
+    - Future predstavlja eventualni rezultat asinhrone operacije. U pitanju su
+      awaitable objekti. Za vise informacija procitati:
+      https://docs.python.org/3/library/asyncio-future.html#asyncio.Future
 """
