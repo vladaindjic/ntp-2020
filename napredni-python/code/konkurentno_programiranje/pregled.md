@@ -3,7 +3,7 @@
 ## Kada je pravo vreme za optimizaciju
 - Sekvencijalne verzija koda je napisana
 - Nismo zadovoljni performansama 
-  (program drugo traje, previše memorijskih resursa koristi, nedovoljno koristi procesorska jezgra) 
+  (program dugo traje, previše memorijskih resursa koristi, nedovoljno koristi procesorska jezgra, itd.) 
 - Profajliranjem utvrdimo koji delovi koda nisu optimalni 
 - Dali smo odgovore na sledeća pitanja:
     - Koliko se često program koristi? 
@@ -13,7 +13,7 @@
     - Koliki je procenat neoptimalnog koda? 
         - Ukoliko je procenat neoptimalnog koda mali, onda optimizacija neće mnogo doprineti.
     - Koliko je vremena neophodno za optimizaciju? Kolike su koristi od optimizacije?
-        - Ukoliko treba previše vremena i ljudksih resursa
+        - Ukoliko treba previše vremena i ljudskih resursa
           utrošiti na optimizaciju, a pri tome neće biti neke velike dobiti, 
           onda možda treba odustati od optimizacije.
 - Voditi računa da je "prerana optimizacija izvor (koren) svakog zla"
@@ -81,7 +81,7 @@ if __name__ == "__main__":
 
 ### Skidanje sadržaja sa interneta upotrebom *threading* biblioteke
 - *Pre-emptive multitasking* - operativni sistem određuje kada će doći do zamene zadataka
-- Zahvaljujući GIL-u (*Global Interpreter Lock*) samo jedna nit može da izvršava kod
+- "Zahvaljujući" [GIL-u (*Global Interpreter Lock*)](https://realpython.com/python-gil/) samo jedna nit može da izvršava kod
 - Nit može biti u bilo kom trenutka prekinuta i zamenjena drugom (čak i usred naredbe), 
 što može dovesti do štetnog preplitanja.
 - Voditi računa da ne dođe do trke do podataka ili *deadlock*-a
@@ -191,7 +191,8 @@ if __name__ == "__main__":
 
 ### Skidanje sadržaja sa interneta upotrebom *multiprocessing* biblioteke 
 - Svaki proces pokreće poseban interpretera. Ova operacija je dosta skuplja od pokretanja niti.
-- Svaki proces ima svoju memoriju. Razmena podataka se odvija putem posebnih protokola za 
+- Svaki proces ima svoju memoriju. 
+- Razmena podataka se odvija putem posebnih protokola za 
 međuprocesnu komunikaciju.
 ```python
 #!/usr/bin/env python3
@@ -238,7 +239,7 @@ if __name__ == "__main__":
 procesa. 
 
 ## *CPU Bound* programi
-- *CPU Bound* programi najviše vremena provedu računajući.
+- *CPU Bound* programi najviše vremena provode računajući.
 - CPU je prezauzet i obično ga nema dovoljno
 - Ovakvi programi se mogu ubrzati povećanjem procesorske moći i njenim pravilnim iskorišćavanjem.
 ![](img/CPUBound.png)
@@ -309,8 +310,12 @@ if __name__ == "__main__":
  uvek bolje rezultate.
 - Kada se bira broj procesa i/ili broj CPU-ova, dobro je teorijski se osloniti na 
 jako i slabo skaliranje, a zatim empirijski utvrditi najbolju konfiguraciju
+- U situacijama kada se program izvršava na mašini bez ekskluzivnog pristupa,
+neretko se koristi manje procesa u odnosu na broj fizčkih jezgara, odnosno hardverskih
+niti. Ovo se takođe radi kako bi se ostavilo nešto hardverskih resursa i za pozadinske poslove
+OS-a.
 
-### Suma kvadta n-prirodnih brojeva upotrebom *threading* i *asyncio* biblioteke
+### Suma kvadrata n-prirodnih brojeva upotrebom *threading* i *asyncio* biblioteke
 - S obzirom da nema blokirajućih operacija, upotreba *asycio* nema smisla.
 - Zbog ogreničenja GIL-a, nema smisla koristiti *threading*.
 
@@ -325,3 +330,4 @@ jako i slabo skaliranje, a zatim empirijski utvrditi najbolju konfiguraciju
 - https://snarky.ca/how-the-heck-does-async-await-work-in-python-3-5/
 - https://en.wikipedia.org/wiki/Coroutine
 - https://djangostars.com/blog/asynchronous-programming-in-python-asyncio/
+- https://realpython.com/python-gil/
