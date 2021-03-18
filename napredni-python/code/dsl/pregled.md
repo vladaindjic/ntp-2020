@@ -29,7 +29,7 @@
 - Parsiranje može biti: silazno (engl. *top-down*) i uzlazno (engl. *bottom-up*).
 
 ### Silazno parsiranje
-- Silazno parsirinje kreće od početnog neterminalnog simbola
+- Silazno parsiranje kreće od početnog neterminalnog simbola
 gramatike, koji predstavlja korenski čvor apstraktnog stabla sintakse. Spuštajući se
 niz stablo, primenjuje pravila izvođenja sa namerom da dođe do terminalnih simbola
 koji odgovaraju sekvenci karaktera izvornog koda.
