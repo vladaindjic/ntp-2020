@@ -3,7 +3,7 @@
 - Jezici koji se koriste za iskazivanje rešenja problema tačno određenog domena.
 - Manje ili više pokrivaju domen problema. U idealnom slučaju ga pokrivaju tačno.
 - Mogu biti vizuelni i tekstualni (mi ćemo se fokusirati na ove druge).
-- Tekstualni JDS-ovi se obično prevode na jezik opšte namene (engl. 
+- Tekstualni JSD-ovi se obično prevode na jezik opšte namene (engl. 
   *General Purpose Language*, u nastavku JON). JON se dalje prevodi na 
   mašinski jezik, koji se izvršava na ciljnoj hardverskoj arhitekturi.
 
@@ -11,7 +11,7 @@
 - Proces prevođenja JSD-a na JON obavlja programski prevodilac.
 - Programski prevodilac je program koji program iskazan jezikom višeg nivoa
   (u našem slučaju JSD-om) 
-  prevode na ekvivalentan program iskazan jezikom nižeg nivoa
+  prevodi na ekvivalentan program iskazan jezikom nižeg nivoa
   (u našem slučaju JON-om).
 - Programski prevodioci se obično sastoje iz dva dela: prednjeg i zadnjeg.
 - Prednji deo obavlja: leksičku, sintaksnu i semantičku analizu, generisanje međukoda 
@@ -23,7 +23,7 @@
 ## Sintaksna analiza
 - Proces u kome se proverava korektnost programa u skladu sa sintaksnim pravilima.
 - Sintaksa pravila se iskazuju uglavnom nekom vrstom Bakus-Naurove forme
-- Rezultat sintaksne analize je (apstraktno) sintaksno stablo
+- Rezultat sintaksne analize je stablo parsiranja.
 - Sintaksna analiza se drugačije naziva parsiranje.
 - Obavljaju je parseri.
 - Parsiranje može biti: silazno (engl. *top-down*) i uzlazno (engl. *bottom-up*).
