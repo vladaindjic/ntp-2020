@@ -16,5 +16,5 @@ pycodestyle==2.5.0
 pyflakes==2.1.1
 requests==2.23.0
 textX==2.1.0
-urllib3==1.25.8
+urllib3==1.26.5
 yarl==1.4.2
